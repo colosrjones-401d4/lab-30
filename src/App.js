@@ -69,18 +69,12 @@ class App extends React.Component {
       <div className="App">
         <Header />
         <main>
-          <aside>
-            <h2>History</h2>
-            <ul className="history"></ul>
-          </aside>
-          <section className="deck">
           <Form
             callApi={this.callApi}
             handleChange={this.handleChange}
             isTextboxDisable={this.state.isTextboxDisable}
           />
           <Json header={this.state.header} response={this.state.response} />
-          </section>
         </main>
         <Footer />
       </div>
