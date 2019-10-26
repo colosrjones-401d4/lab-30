@@ -1,26 +1,84 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import superagent from'superagent';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Form from '.././src/components/form';
+import Header from '.././src/components/header';
+import Footer from '.././src/components/footer';
+import Json from '../src/components/Json';
+
+import './styles/app.scss';
+
+/**
+ * App class/component
+ * Has various state properties for managingg specific points and times. Renders all elements being imported
+ */
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      url: "",
+      method: "",
+      requestbody: "",
+      header: {},
+      response: {},
+      isTextboxDisable: false
+    };
+  }
+
+  /**
+   * @function
+   * @param {object} e
+   * @description makes a call to the specific url that was passed in and parses out the response and header object
+   */
+
+  callApi = e => {
+    e.preventDefault();
+    let body = this.state.requestbody && JSON.parse(this.state.requestbody);
+    superagent(this.state.method, this.state.url)
+      .set("Content-Type", "application/json")
+      .send(body)
+      .then(res => {
+        let header = res.header;
+        let response = res.body;
+        this.setState({ header, response });
+      });
+  };
+
+  /**
+   * @function
+   * @param {object} e
+   * @description when the get label or the delete label is selected, disable the test area, anything else enable the text area
+   *
+   */
+
+  handleChange = e => {
+    let property = e.target.name;
+    let value = e.target.value;
+    if (value === "GET" || value === "DELETE") {
+      this.setState({ isTextboxDisable: true });
+    } else {
+      this.setState({ isTextboxDisable: false });
+    }
+    this.setState({ [property]: value });
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        <main>
+          <Form
+            callApi={this.callApi}
+            handleChange={this.handleChange}
+            isTextboxDisable={this.state.isTextboxDisable}
+          />
+          <Json header={this.state.header} response={this.state.response} />
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default App;
