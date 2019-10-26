@@ -1,8 +1,34 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/2b6890cf-083c-4a8b-a0b5-1c2bc1238556/deploy-status)](https://app.netlify.com/sites/elated-hopper-5d89a6/deploys)
+# Lab: RESTy
 
-[![Build Status](https://travis-ci.org/colosrjones-401d4/lab-30.svg?branch=master)](https://travis-ci.org/colosrjones-401d4/lab-30)
+## Author: Steven Jones
 
+### Links and Resources
+* [submission PR](https://github.com/colosrjones-401d4/lab-30/tree/resty)
 
+* Netlify * [![Netlify Status](https://api.netlify.com/api/v1/badges/2b6890cf-083c-4a8b-a0b5-1c2bc1238556/deploy-status)](https://app.netlify.com/sites/elated-hopper-5d89a6/deploys)
+
+* Travis [![Build Status](https://travis-ci.org/colosrjones-401d4/lab-30.svg?branch=master)](https://travis-ci.org/colosrjones-401d4/lab-30)
+
+#### Documentation
+`npm run`
+
+### Modules
+#### `App.js`
+`callApi(event) -> Gets response back from superagent`
+   * Takes an event. Makes a API request to a third-party application.
+   * It assings the response and header to the state
+
+`handleChange(event) -> setsState`
+   * Handles changes occuring in the form
+
+#### Running the app
+* `npm start`
+  
+#### Tests
+* `npm test`
+
+#### UML
+Link to an image of the UML for your application and response to events# Resty
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
