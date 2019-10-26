@@ -1,3 +1,9 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2b6890cf-083c-4a8b-a0b5-1c2bc1238556/deploy-status)](https://app.netlify.com/sites/elated-hopper-5d89a6/deploys)
+
+[![Build Status](https://travis-ci.org/colosrjones-401d4/lab-30.svg?branch=master)](https://travis-ci.org/colosrjones-401d4/lab-30)
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
