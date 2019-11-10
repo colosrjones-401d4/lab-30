@@ -1,13 +1,10 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
-import "./styles/index.scss";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import './style/reset.scss'
+import './style/resty.scss'
+import './style/style.scss'
 
-class Index extends React.Component {
-  render() {
-    return <App />;
-  }
-}
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<Index />, rootElement);
+ReactDOM.render(<App />, document.getElementById('root'));
+
