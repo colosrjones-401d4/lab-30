@@ -1,4 +1,5 @@
-# Lab: RESTy
+# Lab:30 RESTy
+# Lab:40 RESTy Redux - add redux, create store, add reducers
 
 ## Author: Steven Jones
 
